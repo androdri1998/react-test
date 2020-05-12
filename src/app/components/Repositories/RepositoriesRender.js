@@ -3,9 +3,9 @@ import moment from "moment";
 import PropTypes from "prop-types";
 import {
   ContainerRepositories,
-  TitleDescriptionRepositorie,
+  TitleDescriptionRepository,
   Link,
-  ItemRepositorie,
+  ItemRepository,
   Description,
   Line,
 } from "./style";
@@ -13,25 +13,25 @@ import {
 export default function RepositoriesRender({ repositories }) {
   return (
     <ContainerRepositories>
-      <TitleDescriptionRepositorie>
-        Your repositories
-      </TitleDescriptionRepositorie>
-      {repositories.map((repositorie) => (
-        <ItemRepositorie>
-          <Link href={repositorie.html_url} target="_blank">
-            {repositorie.name}
-          </Link>
-          <Line>
-            {repositorie.language && (
-              <Description>{repositorie.language}</Description>
-            )}
-            <Description>
-              Updated at{" "}
-              {moment(repositorie.updated_at).format("DD/MM/YYYY HH:mm")}
-            </Description>
-          </Line>
-        </ItemRepositorie>
-      ))}
+      <TitleDescriptionRepository>Your repositories</TitleDescriptionRepository>
+      {repositories.map((repository) =>
+        repository.name !== ".github" ? (
+          <ItemRepository>
+            <Link href={repository.html_url} target="_blank">
+              {repository.name}
+            </Link>
+            <Line>
+              {repository.language && (
+                <Description>{repository.language}</Description>
+              )}
+              <Description>
+                Updated at{" "}
+                {moment(repository.updated_at).format("DD/MM/YYYY HH:mm")}
+              </Description>
+            </Line>
+          </ItemRepository>
+        ) : null
+      )}
     </ContainerRepositories>
   );
 }

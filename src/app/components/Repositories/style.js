@@ -7,7 +7,7 @@ export const ContainerRepositories = styled.div`
   flex-direction: column;
 `;
 
-export const ItemRepositorie = styled.article`
+export const ItemRepository = styled.article`
   border-bottom: solid 1px #cfd8dc;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Link = styled.a`
   color: #01579b;
 `;
 
-export const TitleDescriptionRepositorie = styled.p`
+export const TitleDescriptionRepository = styled.p`
   font-size: 20px;
   color: gray;
 `;
