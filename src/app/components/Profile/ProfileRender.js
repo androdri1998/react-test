@@ -7,7 +7,6 @@ export default function ProfileRender({ profile }) {
     <ContainerProfile>
       <Image alt="profile" src={profile.avatar_url} />
       <TextName>{profile.name}</TextName>
-      <TextUsername>{profile.login}</TextUsername>
     </ContainerProfile>
   );
 }
